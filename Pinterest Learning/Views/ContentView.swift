@@ -14,10 +14,16 @@ struct ContentView: View {
     @State private var selectedNote: Note?
     var body: some View {
         NavigationSplitView{
-            List(selection: $) {
-                /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Content@*/Text("Content")/*@END_MENU_TOKEN@*/
+            List(selection: $selectedNote) {
+                ForEach(notes){ note in
+                    Text(note.title)
+                }
             }
-
+            .navigationTitle("My Notes")
+            .listStyle(.sidebar)
+            .frame(minWidth: 200)
+        } detail: {
+            
         }
     }
 }
