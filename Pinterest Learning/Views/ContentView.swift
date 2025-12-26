@@ -22,7 +22,16 @@ struct ContentView: View {
             .navigationTitle("My Notes")
             .listStyle(.sidebar)
             .frame(minWidth: 200)
-        } detail: {
+            .toolbar {
+                Button("New Note"){
+                    let newNote = Note(title: "undefined", body: "")
+                    notes.append(newNote)
+                    selectedNote = newNote
+                    
+                }
+            }
+        }
+        detail: {
             
         }
     }
