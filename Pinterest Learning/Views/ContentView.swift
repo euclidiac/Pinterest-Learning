@@ -12,13 +12,19 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject private var store = NoteStore()
+    @State private var notes: [Note] = [
+        Note(title: "New Note", body: "Start writing here!")
+    ]
     @State private var selectedNote: Note?
-    
+    func newNote() {
+        let newNote = Note(title: "Untitled", body: "")
+        notes.append(newNote)
+        selectedNote = newNote
+    }
     var body: some View {
         NavigationSplitView{
             List(selection: $selectedNote) {
-                ForEach(store.notes){ note in
+                ForEach(notes){ note in
                     Text(note.title)
                         .tag(note)
                 }
@@ -28,16 +34,16 @@ struct ContentView: View {
             .frame(minWidth: 200)
             .toolbar {
                 Button("New Note"){
-                    let newNote = Note(title: "Untitled", body: "")
-                    store.notes.append(newNote)
-                    selectedNote = newNote
+                    newNote()
                 }
+                .buttonStyle(.plain)
             }
+            
         }
     detail:
         {
             if let note = selectedNote {
-                NoteDetailView(note: binding(for: note))
+                SwiftUIView(note: binding(for: note))
             } else{
                 Text("Select a note")
                     .foregroundStyle(.secondary)
@@ -45,11 +51,12 @@ struct ContentView: View {
         }
     }
     private func binding(for note: Note) -> Binding<Note> {
-        guard let index = store.notes.firstIndex(where: { $0.id == note.id}) else {
+        guard let index = notes.firstIndex(where: { $0.id == note.id}) else {
             fatalError("Note not found")
         }
-        return $store.notes[index]
+        return $notes[index]
     }
+
 }
 
 #Preview {

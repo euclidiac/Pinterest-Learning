@@ -13,10 +13,13 @@ struct SwiftUIView: View {
         VStack(alignment: .leading){
             TextField("Title", text: $note.title)
                 .font(.title)
+                .cornerRadius(10)
+                .textFieldStyle(PlainTextFieldStyle())
                 .padding(.bottom)
+                
             TextEditor(text: $note.body)
                 .font(.body)
-                .border(Color.white.opacity(0.5))
+                .cornerRadius(10)
         }
         .padding()
         .navigationTitle(note.title)
