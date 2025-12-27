@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		454962442EFF5E7A00C3F8EA /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454962432EFF5E7A00C3F8EA /* SwiftUIView.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		45084E852EFE766E005FA075 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,6 +31,7 @@
 		45084E732EFE7668005FA075 /* Pinterest Learning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pinterest Learning.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45084E842EFE766E005FA075 /* Pinterest LearningTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pinterest LearningTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45084E8E2EFE766E005FA075 /* Pinterest LearningUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pinterest LearningUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		454962432EFF5E7A00C3F8EA /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -75,6 +80,7 @@
 		45084E6A2EFE7668005FA075 = {
 			isa = PBXGroup;
 			children = (
+				454962432EFF5E7A00C3F8EA /* SwiftUIView.swift */,
 				45084E752EFE7668005FA075 /* Pinterest Learning */,
 				45084E872EFE766E005FA075 /* Pinterest LearningTests */,
 				45084E912EFE766E005FA075 /* Pinterest LearningUITests */,
@@ -236,6 +242,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				454962442EFF5E7A00C3F8EA /* SwiftUIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

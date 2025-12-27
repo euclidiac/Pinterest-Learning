@@ -24,7 +24,7 @@ struct ContentView: View {
             .frame(minWidth: 200)
             .toolbar {
                 Button("New Note"){
-                    let newNote = Note(title: "undefined", body: "")
+                    let newNote = Note(title: "New Note", body: "")
                     notes.append(newNote)
                     selectedNote = newNote
                     
@@ -32,8 +32,19 @@ struct ContentView: View {
             }
         }
         detail: {
-            
+            if let note = selectedNote {
+                SwiftUIView(note: binding(for: note))
+            } else {
+                Text("Choose a note.")
+                    .foregroundStyle(.secondary)
+            }
         }
+    }
+    private func binding(for note: Note) -> Binding<Note> {
+        guard let index = notes.firstIndex(where: { $0.id == note.id}) else {
+            fatalError("Note not found")
+        }
+        return $notes[index]
     }
 }
 
